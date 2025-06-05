@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makecode Pixelart Maker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="npm/clipboard_2/dist/clipboard.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Makecode Pixelart Maker
+      </h1>
+      <p>
+        Turn an image into Javascript pixel art you can add to your
+        <a href="https://arcade.makecode.com/" target="_blank"
+          >MakeCode Arcade Projects</a
+        >
+      </p>
+    </header>
+    <div id="inputs" class="section">
+      <input type="file" id="image-upload" name="image-upload" />
+      <label for="image-upload" class="image-upload-btn"
+        >Upload an image...</label
+      >
+    </div>
+    <div id="output" class="section hidden">
+      <div class="canvas-container">
+        <h2>Image Preview</h2>
+        <canvas id="image">Your browser doesn't support canvas 😕</canvas>
+        <div id="options" class="hidden">
+          <h2>
+            Options
+          </h2>
+          <div class="btn-group">
+            <label class="switch">
+              <input
+                type="checkbox"
+                class="transparent"
+                id="transparent-check"
+                name="transparent"
+              />
+              <span class="slider round"></span>            
+            </label>
+            <div class="transparent-label">Turn white pixels transparent</div>
+          </div>
+          <div class="btn-group">
+            <label for="pixel-size">Resolution: </label>
+            <button id="dec-resolution" class="small">
+              -
+            </button>
+            <button id="inc-resolution" class="small">
+              +
+            </button>
+          </div>
+          <div class="note">
+            Note: The higher the resolution, the larger your pixel art will be.
+          </div>
+<!--           <input
+          class="hidden"
+          type="number"
+          id="pixel-size"
+          name="pixel-size"
+          min="1"
+          value="20"
+        /> -->
+        </div>
+      </div>
+      <div class="code-container">
+        <h2>Code</h2>
+        <button id="clipboard-btn" data-clipboard-target="#code" style="padding: ">
+          Copy to Clipboard
+        </button>
+        <p>
+          Copy and paste this code into MakeCode's Javascript Tab
+        </p>
+        <pre id="code"></pre>
+      </div>
+    </div>
+    <footer>
+      <a href="https://twitter.com/scientiffic/status/1176706359133442054" target="_blank">See Demo</a>
+      | <a href="https://glitch.com/edit/#!/makecode-pixelart-maker" target="_blank">View Source</a>
+      | Made by <a href="https://twitter.com/scientiffic" target="_blank">@scientiffic</a>
+    </footer>
+    <script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+    <!-- this is created by using browserify to run nearest-color on the client
+      `browserify public/pixelate.js -o publicbundle.js`
+  -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="button_subdomain/button.js"></script>
+    <script src="bundle.js" type="text/javascript"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148744257-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-148744257-1');
+    </script>
+  <center><font size="2">This is the free demo result. For a full version of this website, please go to  <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">Website Downloader</a></font></center></body>
+</html>
